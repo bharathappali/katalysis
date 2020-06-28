@@ -1,0 +1,38 @@
+{
+  "charts" : {
+    "quarkus" : {
+      "throughput": {
+        "chartData" : {
+          "labels": ["runc", "kata", "kata-virtio-fs", "vm"],
+          "colors": ["#3369e8"],
+          "id": "quarkus-throughput-chart",
+          "title": "Quarkus throughput",
+          "type":"bar",
+          "height":"300",
+          "tooltipOptions": "{ formatTooltipX: d => (d + '').toUpperCase(), formatTooltipY: d => d + ' tps'}",
+          "dataSets": []
+        }
+      },
+      "responseTime": {
+        "chartData" : {
+          "labels": ["runc", "kata", "kata-virtio-fs", "vm"],
+          "colors": ["#3369e8"]
+        }
+      }
+    },
+    "petclinic": {
+      "throughput": {
+        "chartData" : {
+          "labels": ["runc", "kata", "kata-virtio-fs", "vm"],
+          "colors": ["#3369e8"]
+        }
+      },
+      "responseTime": {
+        "chartData" : {
+          "labels": ["runc", "kata", "kata-virtio-fs", "vm"],
+          "colors": ["#3369e8"]
+        }
+      }
+    }
+  }
+}
