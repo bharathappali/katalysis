@@ -10,7 +10,8 @@
         <div class="links-holder" vs-w="12">
           <router-link to="/quarkus">Baseline</router-link> |
           <router-link to="/quarkus/constResources">Constant Resources</router-link> |
-          <router-link to="/quarkus/virtiofs">With virtio-fs</router-link>
+          <router-link to="/quarkus/virtiofs">With virtio-fs</router-link> |
+          <router-link to="/quarkus/summary">Summary</router-link>
         </div>
       </vs-col>
       <vs-col vs-justify="center" vs-align="center" vs-w="12" vs-lg="12" vs-sm="12" vs-xs="12">

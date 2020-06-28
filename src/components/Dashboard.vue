@@ -4,7 +4,7 @@
             vs-align="flex-start"
             vs-type="flex" vs-justify="center" vs-w="12">
       <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="6" vs-lg="6" vs-sm="10" vs-xs="10">
-        <div>
+        <div class="dashboard-holder">
           <!--          Title-->
           <h1 class="katalysis-about-title">Katalysis - Kata container analysis</h1><br/>
           <!--          Description-->
@@ -49,6 +49,10 @@
 </script>
 
 <style scoped lang="scss">
+  .dashboard-holder {
+    margin-top: 100px;
+  }
+
   .katalysis-about-title {
     color: #42b983;
   }

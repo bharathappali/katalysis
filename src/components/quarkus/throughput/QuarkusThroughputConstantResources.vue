@@ -65,11 +65,11 @@
             }
           ],
           showValues: true,
-          valuesets: {
+          valuesets: [{
             "runc": 14354,
             "kata": 10084,
             "vm": 7804
-          },
+          }],
           isRunc: true,
           isKata: true,
           isVm: true,

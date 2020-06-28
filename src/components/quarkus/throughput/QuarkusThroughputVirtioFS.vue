@@ -64,11 +64,11 @@
             }
           ],
           showValues: true,
-          valuesets: {
+          valuesets: [{
             "runc": 15317,
             "kata": 7804,
             "kata-virtio-fs": 5769,
-          },
+          }],
           isRunc: true,
           isKata: true,
           isVm: false,

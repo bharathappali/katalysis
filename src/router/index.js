@@ -9,6 +9,7 @@ import QuarkusBaseline from "../components/quarkus/throughput/QuarkusThroughputB
 import QuarkusConstantResources from "../components/quarkus/throughput/QuarkusThroughputConstantResources";
 import QuarkusVirtioFS from "../components/quarkus/throughput/QuarkusThroughputVirtioFS";
 import Petclinic from "../components/petclinic/Petclinic";
+import QuarkusThroughputSummary from "../components/quarkus/throughput/QuarkusThroughputSummary";
 
 Vue.use(VueRouter)
 
@@ -38,21 +39,17 @@ const routes = [
         {
           path: 'virtiofs',
           component: QuarkusVirtioFS
-        }
+        },
+        {
+          path: 'summary',
+          component: QuarkusThroughputSummary
+        },
       ]
   },
   {
     path: '/petclinic',
     name: 'Petclinic',
     component: Petclinic,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
 

@@ -10,10 +10,10 @@
       <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2" v-if="isKata">
         <vs-checkbox color="#42b983" v-model="chartLabels" @change="optsChanged($event)" icon="done" vs-value="kata">kata</vs-checkbox>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="3" v-if="isKataVirtio">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="4" v-if="isKataVirtio">
         <vs-checkbox color="#42b983" v-model="chartLabels" @change="optsChanged($event)" icon="done" vs-value="kata-virtio-fs">Kata [virtio-fs]</vs-checkbox>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="3" v-if="isVm">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2" v-if="isVm">
         <vs-checkbox color="#42b983" v-model="chartLabels" @change="optsChanged($event)" icon="done" vs-value="vm">VM</vs-checkbox>
       </vs-col>
     </vs-row>
@@ -44,19 +44,19 @@
           setAllLabels: function () {
             this.chartLabels = this.chartData['labels'];
             for (var i = 0; i < this.chartDatasets.length; i++) {
-                this.chartDatasets[i].values = this.getValues();
+                this.chartDatasets[i].values = this.getValues(i);
             }
           },
           // eslint-disable-next-line no-unused-vars
           optsChanged: function (event) {
               for (var i = 0; i < this.chartDatasets.length; i++) {
-                  this.chartDatasets[i].values = this.getValues();
+                  this.chartDatasets[i].values = this.getValues(i);
               }
           },
-          getValues: function () {
+          getValues: function (index) {
             var arr = [];
             for (var i = 0; i < this.chartLabels.length; i++) {
-                arr.push(this.valueMap[this.chartLabels[i]]);
+                arr.push(this.valueMap[index][this.chartLabels[i]]);
             }
             return arr;
           }
