@@ -21,7 +21,7 @@
         quarkusThroughputChartData: {
           id: "quarkus-responsetime-summary-chart",
           labels: ['runc', 'kata', 'kata-virtio-fs','vm'],
-          title: 'Response Time (Lower the better)',
+          title: 'First Response Time (Lower the better)',
           type: 'bar',
           height: 500,
           tooltipOptions: {
@@ -33,37 +33,37 @@
             {
               name: "Baseline",
               type: "bar",
-              values: [2337, 517, 0, 0]
+              values: [10079, 23515, 0, 0]
             },
             {
               name: "Const Res",
               type: "bar",
-              values: [14354, 10084, 0, 7804]
+              values: [5232, 7502, 0, 19237]
             },
             {
               name: "virtio-fs",
               type: "bar",
-              values: [15317, 7804, 5769, 0]
+              values: [5232, 7502, 6736, 0]
             }
           ],
           showValues: true,
           valuesets: [
             {
-              "runc": 2337,
-              "kata": 517,
+              "runc": 10079,
+              "kata": 23515,
               "kata-virtio-fs": 0,
               "vm": 0
             },
             {
-              "runc": 14354,
-              "kata": 10084,
+              "runc": 5232,
+              "kata": 7502,
               "kata-virtio-fs": 0,
-              "vm": 7804
+              "vm": 19237
             },
             {
-              "runc": 15317,
-              "kata": 7804,
-              "kata-virtio-fs": 5769,
+              "runc": 5232,
+              "kata": 7502,
+              "kata-virtio-fs": 6736,
               "vm": 0
             }
           ],

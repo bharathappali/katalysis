@@ -19,7 +19,7 @@
             <div class="analysis-section">
               <h2 class="analysis-heading">Analysis</h2>
               <p class="analysis-content">
-                <strong>Runc</strong> is <strong>4.5</strong> times <strong>Kata</strong>
+                <strong>Runc</strong> is <strong>2.3</strong> times <strong>Kata</strong>
               </p>
             </div>
           </vs-col>
@@ -45,7 +45,7 @@
         quarkusThroughputChartData: {
           id: "quarkus-responsetime-baseline-chart",
           labels: ['runc', 'kata'],
-          title: 'Response Time (Lower the better)',
+          title: 'First Response Time (Lower the better)',
           type: 'bar',
           height: 500,
           tooltipOptions: {
@@ -57,13 +57,13 @@
             {
               name: "Response Time",
               type: "bar",
-              values: [2337, 517]
+              values: [10079, 23515]
             }
           ],
           showValues: true,
           valuesets: [{
-            "runc": 2337,
-            "kata": 517
+            "runc": 10079,
+            "kata": 23515
           }],
           isRunc: true,
           isKata: true,

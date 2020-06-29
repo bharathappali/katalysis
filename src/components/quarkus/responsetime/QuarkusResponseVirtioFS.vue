@@ -22,8 +22,8 @@
               <h2 class="analysis-heading">Analysis</h2>
               <p class="analysis-content">
                 <strong>Runc</strong> is <strong>1.4</strong> times <strong>Kata (with qemu and 9pfs)</strong><br/>
-                <strong>Runc</strong> is <strong>1.5</strong> times <strong>Kata (with qemu and virtio-fs)</strong><br/>
-                <strong>Kata (with qemu and 9pfs)</strong> is <strong>1.1</strong> times <strong>Kata (with qemu and virtio-fs)</strong>
+                <strong>Runc</strong> is <strong>1.1</strong> times <strong>Kata (with qemu and virtio-fs)</strong><br/>
+                <strong>Kata (with qemu and virtio-fs)</strong> is <strong>1.1</strong> times <strong>Kata (with qemu and 9pfs)</strong>
               </p>
             </div>
           </vs-col>
@@ -46,28 +46,28 @@
     data () {
       return {
         quarkusThroughputChartData: {
-          id: "quarkus-throughput-virtiofs-chart",
+          id: "quarkus-responsetime-virtiofs-chart",
           labels: ['runc', 'kata', 'kata-virtio-fs'],
-          title: 'Throughput (Higher the better)',
+          title: 'First Response Time (Lower the better)',
           type: 'bar',
           height: 500,
           tooltipOptions: {
             formatTooltipX: d => (d + '').toUpperCase(),
-            formatTooltipY: d => d + ' tps',
+            formatTooltipY: d => d + ' ms',
           },
           colors: ['#42b983'],
           datasets: [
             {
-              name: "Throughput",
+              name: "Response Time",
               type: "bar",
-              values: [15317, 7804, 5769]
+              values: [5232, 7502, 6736]
             }
           ],
           showValues: true,
           valuesets: [{
-            "runc": 15317,
-            "kata": 7804,
-            "kata-virtio-fs": 5769,
+            "runc": 5232,
+            "kata": 7502,
+            "kata-virtio-fs": 6736,
           }],
           isRunc: true,
           isKata: true,
