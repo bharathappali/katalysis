@@ -41,7 +41,7 @@
 <script>
   import ChartModule from "../../ChartModule";
   export default {
-    name: "QuarkusVirtioFS",
+    name: "QuarkusThroughputVirtioFS",
     components: {ChartModule},
     data () {
       return {

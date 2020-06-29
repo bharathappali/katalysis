@@ -1,23 +1,10 @@
 <template>
   <div>
-    <vs-row
-            vs-align="flex-start"
-            vs-type="flex" vs-justify="center" vs-w="12">
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="7" vs-lg="7" vs-sm="12" vs-xs="12">
-        <h1>Throughput Comparisons</h1>
-      </vs-col>
-      <vs-col vs-justify="center" vs-align="center" vs-w="5" vs-lg="5" vs-sm="12" vs-xs="12">
-        <div class="links-holder" vs-w="12">
-          <router-link to="/quarkus">Baseline</router-link> |
-          <router-link to="/quarkus/constResources">Constant Resources</router-link> |
-          <router-link to="/quarkus/virtiofs">With virtio-fs</router-link> |
-          <router-link to="/quarkus/summary">Summary</router-link>
-        </div>
-      </vs-col>
-      <vs-col vs-justify="center" vs-align="center" vs-w="12" vs-lg="12" vs-sm="12" vs-xs="12">
-        <router-view/>
-      </vs-col>
-    </vs-row>
+    <div id="quarkus-nav">
+      <router-link to="/quarkus/throughput" class="left-link">Throughput Comparisons</router-link>
+      <router-link to="/quarkus/responsetime" class="right-link">Response Time Comparisons</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
@@ -28,16 +15,37 @@
 </script>
 
 <style scoped lang="scss">
-  .links-holder {
-    padding: 20px
+  .left-link {
+    margin-right: 30px;
   }
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  .right-link {
+    margin-left: 30px;
+  }
 
-  &.router-link-exact-active {
-     color: #42b983;
-   }
+  #quarkus-nav {
+    padding: 20px 30px 30px 30px;
+
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+      padding: 10px 30px 10px 30px;
+      border: 1px solid #42b983;
+      border-radius: 5px;
+
+    &:hover {
+       background: #42b983;
+       color: #FFFFFF;
+     }
+
+    &.router-link-exact-active {
+      color: #42b983;
+      border: 1px solid #2c3e50;
+     }
+
+    &.router-link-exact-active:hover {
+       color: #FFFFFF;
+     }
+    }
   }
 </style>

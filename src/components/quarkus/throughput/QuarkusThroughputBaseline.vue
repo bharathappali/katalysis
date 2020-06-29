@@ -38,7 +38,7 @@
     import ChartModule from "../../ChartModule";
 
     export default {
-        name: "QuarkusBaseline",
+        name: "QuarkusThroughputBaseline",
         components: {ChartModule},
         data () {
             return {
