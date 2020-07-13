@@ -2,7 +2,7 @@
   <vs-row
           vs-align="flex-start"
           vs-type="flex" vs-justify="center" vs-w="12">
-    <vs-col vs-justify="center" vs-align="center" vs-w="11" vs-lg="11" vs-sm="12" vs-xs="12">
+    <vs-col vs-justify="center" vs-align="center" vs-w="8" vs-lg="8" vs-sm="12" vs-xs="12">
       <div style="width: 100% !important;">
         <ChartModule :chart-data="petclinicThroughputChartData"/>
       </div>
