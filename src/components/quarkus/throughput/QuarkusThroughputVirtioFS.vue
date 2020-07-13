@@ -72,7 +72,10 @@
           isRunc: true,
           isKata: true,
           isVm: false,
-          isKataVirtio: true
+          isKataVirtio: true,
+          isKataXtune: false,
+          isKataVirtioXtune: false,
+          isVmXtune: false
         },
       }
     }

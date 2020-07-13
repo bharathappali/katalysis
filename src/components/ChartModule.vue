@@ -1,20 +1,29 @@
 <template>
   <div>
     <vs-row vs-w="12">
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="1">
         <vs-button color="rgb(66, 185, 131)" type="filled" @click="setAllLabels()">All</vs-button>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2" v-if="isRunc">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="1" v-if="isRunc">
         <vs-checkbox color="#42b983" v-model="chartLabels" @change="optsChanged($event)" icon="done" vs-value="runc">runc</vs-checkbox>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2" v-if="isKata">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="1" v-if="isKata">
         <vs-checkbox color="#42b983" v-model="chartLabels" @change="optsChanged($event)" icon="done" vs-value="kata">kata</vs-checkbox>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="4" v-if="isKataVirtio">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2" v-if="isKataXtune">
+        <vs-checkbox color="#42b983" v-model="chartLabels" @change="optsChanged($event)" icon="done" vs-value="kata + xtune">kata + xtune</vs-checkbox>
+      </vs-col>
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2" v-if="isKataVirtio">
         <vs-checkbox color="#42b983" v-model="chartLabels" @change="optsChanged($event)" icon="done" vs-value="kata-virtio-fs">Kata [virtio-fs]</vs-checkbox>
       </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2" v-if="isVm">
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2" v-if="isKataVirtioXtune">
+        <vs-checkbox color="#42b983" v-model="chartLabels" @change="optsChanged($event)" icon="done" vs-value="kata-virtio-fs + xtune">Kata [virtio-fs] + xtune</vs-checkbox>
+      </vs-col>
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="1" v-if="isVm">
         <vs-checkbox color="#42b983" v-model="chartLabels" @change="optsChanged($event)" icon="done" vs-value="vm">VM</vs-checkbox>
+      </vs-col>
+      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2" v-if="isVmXtune">
+        <vs-checkbox color="#42b983" v-model="chartLabels" @change="optsChanged($event)" icon="done" vs-value="vm + xtune">VM + Xtune</vs-checkbox>
       </vs-col>
     </vs-row>
     <vue-frappe
@@ -26,7 +35,8 @@
             :height="chartHeight"
             :tooltipOptions="chartTooltipOptions"
             :colors="chartColors"
-            :dataSets="chartDatasets">
+            :dataSets="chartDatasets"
+            :barOptions="chartBarOptions">
     </vue-frappe>
   </div>
 </template>
@@ -72,11 +82,15 @@
                 chartTooltipOptions: this.chartData['tooltipOptions'],
                 chartColors: this.chartData['colors'],
                 chartDatasets: this.chartData['datasets'],
+                chartBarOptions: this.chartData['barOptions'],
                 showValues: this.chartData['showValues'],
                 isRunc: this.chartData['isRunc'],
                 isKata: this.chartData['isKata'],
                 isVm: this.chartData['isVm'],
-                isKataVirtio: this.chartData['isKataVirtio']
+                isKataVirtio: this.chartData['isKataVirtio'],
+                isKataXtune: this.chartData['isKataXtune'],
+                isVmXtune: this.chartData['isVmXtune'],
+                isKataVirtioXtune: this.chartData['isKataVirtioXtune'],
             }
         }
     }

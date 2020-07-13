@@ -20,6 +20,8 @@ import QuarkusResponseVirtioFS from "../components/quarkus/responsetime/QuarkusR
 import QuarkusResponseSummary from "../components/quarkus/responsetime/QuarkusResponseSummary";
 import QuarkusResponseTime from "../components/quarkus/QuarkusResponseTime";
 import Quarkus from "../components/quarkus/Quarkus";
+import PetclinicResponseSummary from "../components/petclinic/responsetime/PetclinicResponseSummary";
+import PetclinicResponseTime from "../components/petclinic/PetclinicResponseTime";
 
 Vue.use(VueRouter)
 
@@ -93,6 +95,45 @@ const routes = [
     path: '/petclinic',
     name: 'Petclinic',
     component: Petclinic,
+    children: [
+      {
+        path: 'throughput',
+        component: QuarkusThroughput,
+        children: [
+          {
+            path: '/',
+            component: QuarkusThroughputBaseline
+          },
+          {
+            path: 'baseline',
+            component: QuarkusThroughputBaseline
+          },
+          {
+            path: 'constResources',
+            component: QuarkusThroughputConstantResources
+          },
+          {
+            path: 'virtiofs',
+            component: QuarkusThroughputVirtioFS
+          },
+          {
+            path: 'summary',
+            component: QuarkusThroughputSummary
+          },
+        ]
+      },
+      {
+        path: 'responsetime',
+        component: PetclinicResponseTime,
+        children: [
+          {
+            path: '/',
+            component: PetclinicResponseSummary
+          }
+        ]
+      },
+
+    ]
   }
 ]
 
