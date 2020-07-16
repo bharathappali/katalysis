@@ -22,7 +22,7 @@
             vs-type="flex" vs-justify="center" vs-w="12">
       <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="6" vs-lg="6" vs-sm="10" vs-xs="10">
         <div class="benchmark-section">
-          <h2>Benchmarks we tried</h2>
+          <h2>Factors</h2>
         </div>
       </vs-col>
     </vs-row>
@@ -30,11 +30,11 @@
             vs-align="flex-start"
             vs-type="flex" vs-justify="center" vs-w="12">
       <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="8" vs-lg="8" vs-sm="10" vs-xs="10">
-        <router-link to="/quarkus" class="benchmark-link left-link">
-          Quarkus Demo
+        <router-link to="/throughput" class="benchmark-link left-link">
+          Throughput
         </router-link>
-        <router-link to="/petclinic" class="benchmark-link right-link">
-          Spring Petclinic
+        <router-link to="/responsetime" class="benchmark-link right-link">
+          Response Time
         </router-link>
       </vs-col>
     </vs-row>

@@ -5,23 +5,8 @@ import NProgress from 'nprogress'
 
 import '../../node_modules/nprogress/nprogress.css'
 
-import QuarkusThroughput from "../components/quarkus/QuarkusThroughput";
-
-import Petclinic from "../components/petclinic/Petclinic";
-
-import QuarkusThroughputBaseline from "../components/quarkus/throughput/QuarkusThroughputBaseline";
-import QuarkusThroughputConstantResources from "../components/quarkus/throughput/QuarkusThroughputConstantResources";
-import QuarkusThroughputVirtioFS from "../components/quarkus/throughput/QuarkusThroughputVirtioFS";
-import QuarkusThroughputSummary from "../components/quarkus/throughput/QuarkusThroughputSummary";
-
-import QuarkusResponseBaseline from "../components/quarkus/responsetime/QuarkusResponseBaseline";
-import QuarkusResponseConstantResources from "../components/quarkus/responsetime/QuarkusResponseConstantResources";
-import QuarkusResponseVirtioFS from "../components/quarkus/responsetime/QuarkusResponseVirtioFS";
-import QuarkusResponseSummary from "../components/quarkus/responsetime/QuarkusResponseSummary";
-import QuarkusResponseTime from "../components/quarkus/QuarkusResponseTime";
-import Quarkus from "../components/quarkus/Quarkus";
-import PetclinicResponseSummary from "../components/petclinic/responsetime/PetclinicResponseSummary";
-import PetclinicResponseTime from "../components/petclinic/PetclinicResponseTime";
+import KatalysisThroughput from "../components/throughput/KatalysisThroughput";
+import KatalysisResponseTime from "../components/responsetime/KatalysisResponseTime";
 
 Vue.use(VueRouter)
 
@@ -32,109 +17,119 @@ const routes = [
     component: Home,
   },
   {
-      path: '/quarkus',
-      name: 'Quarkus',
-      component: Quarkus,
-      children: [
-        {
-          path: 'throughput',
-          component: QuarkusThroughput,
-          children: [
-            {
-              path: '/',
-              component: QuarkusThroughputBaseline
-            },
-            {
-              path: 'baseline',
-              component: QuarkusThroughputBaseline
-            },
-            {
-              path: 'constResources',
-              component: QuarkusThroughputConstantResources
-            },
-            {
-              path: 'virtiofs',
-              component: QuarkusThroughputVirtioFS
-            },
-            {
-              path: 'summary',
-              component: QuarkusThroughputSummary
-            },
-          ]
-        },
-        {
-          path: 'responsetime',
-          component: QuarkusResponseTime,
-          children: [
-            {
-              path: '/',
-              component: QuarkusResponseBaseline
-            },
-            {
-              path: 'baseline',
-              component: QuarkusResponseBaseline
-            },
-            {
-              path: 'constResources',
-              component: QuarkusResponseConstantResources
-            },
-            {
-              path: 'virtiofs',
-              component: QuarkusResponseVirtioFS
-            },
-            {
-              path: 'summary',
-              component: QuarkusResponseSummary
-            }
-          ]
-        },
-
-      ]
+    path:'/throughput',
+    name: 'KatalysisThroughput',
+    component: KatalysisThroughput
   },
   {
-    path: '/petclinic',
-    name: 'Petclinic',
-    component: Petclinic,
-    children: [
-      {
-        path: 'throughput',
-        component: QuarkusThroughput,
-        children: [
-          {
-            path: '/',
-            component: QuarkusThroughputBaseline
-          },
-          {
-            path: 'baseline',
-            component: QuarkusThroughputBaseline
-          },
-          {
-            path: 'constResources',
-            component: QuarkusThroughputConstantResources
-          },
-          {
-            path: 'virtiofs',
-            component: QuarkusThroughputVirtioFS
-          },
-          {
-            path: 'summary',
-            component: QuarkusThroughputSummary
-          },
-        ]
-      },
-      {
-        path: 'responsetime',
-        component: PetclinicResponseTime,
-        children: [
-          {
-            path: '/',
-            component: PetclinicResponseSummary
-          }
-        ]
-      },
-
-    ]
+    path: '/responsetime',
+    name: 'KatalysisResponseTime',
+    component: KatalysisResponseTime
   }
+  // {
+  //     path: '/quarkus',
+  //     name: 'Quarkus',
+  //     component: Quarkus,
+  //     children: [
+  //       {
+  //         path: 'throughput',
+  //         component: QuarkusThroughput,
+  //         children: [
+  //           {
+  //             path: '/',
+  //             component: QuarkusThroughputBaseline
+  //           },
+  //           {
+  //             path: 'baseline',
+  //             component: QuarkusThroughputBaseline
+  //           },
+  //           {
+  //             path: 'constResources',
+  //             component: QuarkusThroughputConstantResources
+  //           },
+  //           {
+  //             path: 'virtiofs',
+  //             component: QuarkusThroughputVirtioFS
+  //           },
+  //           {
+  //             path: 'summary',
+  //             component: QuarkusThroughputSummary
+  //           },
+  //         ]
+  //       },
+  //       {
+  //         path: 'responsetime',
+  //         component: QuarkusResponseTime,
+  //         children: [
+  //           {
+  //             path: '/',
+  //             component: QuarkusResponseBaseline
+  //           },
+  //           {
+  //             path: 'baseline',
+  //             component: QuarkusResponseBaseline
+  //           },
+  //           {
+  //             path: 'constResources',
+  //             component: QuarkusResponseConstantResources
+  //           },
+  //           {
+  //             path: 'virtiofs',
+  //             component: QuarkusResponseVirtioFS
+  //           },
+  //           {
+  //             path: 'summary',
+  //             component: QuarkusResponseSummary
+  //           }
+  //         ]
+  //       },
+  //
+  //     ]
+  // },
+  // {
+  //   path: '/petclinic',
+  //   name: 'Petclinic',
+  //   component: Petclinic,
+  //   children: [
+  //     {
+  //       path: 'throughput',
+  //       component: QuarkusThroughput,
+  //       children: [
+  //         {
+  //           path: '/',
+  //           component: QuarkusThroughputBaseline
+  //         },
+  //         {
+  //           path: 'baseline',
+  //           component: QuarkusThroughputBaseline
+  //         },
+  //         {
+  //           path: 'constResources',
+  //           component: QuarkusThroughputConstantResources
+  //         },
+  //         {
+  //           path: 'virtiofs',
+  //           component: QuarkusThroughputVirtioFS
+  //         },
+  //         {
+  //           path: 'summary',
+  //           component: QuarkusThroughputSummary
+  //         },
+  //       ]
+  //     },
+  //     {
+  //       path: 'responsetime',
+  //       component: PetclinicResponseTime,
+  //       children: [
+  //         {
+  //           path: '/',
+  //           component: PetclinicResponseSummary
+  //         }
+  //       ]
+  //     },
+  //
+  //   ]
+  // }
 ]
 
 const router = new VueRouter({
