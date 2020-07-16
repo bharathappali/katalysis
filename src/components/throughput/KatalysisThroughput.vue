@@ -1,6 +1,13 @@
 <template>
   <div>
     <h1>Throughput</h1>
+    <vs-button
+            class="btn-other"
+            color="success"
+            type="flat"
+            icon="arrow_left"
+            size="large"
+            to="/responsetime">Response Time</vs-button>
     <vs-row
             vs-align="flex-start"
             vs-type="flex" vs-justify="center" vs-w="12">
@@ -23,6 +30,8 @@
   }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.btn-other {
+  margin-top: -50px;
+}
 </style>

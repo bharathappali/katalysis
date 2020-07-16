@@ -1,7 +1,13 @@
 <template>
   <div>
     <h1>Response Time</h1>
-
+    <vs-button
+            class="btn-other"
+            color="success"
+            type="flat"
+            icon="arrow_left"
+            size="large"
+            to="/throughput">Throughput</vs-button>
     <vs-row
             vs-align="flex-start"
             vs-type="flex" vs-justify="center" vs-w="12">
@@ -41,6 +47,10 @@
     fill: #2c3e50 !important;
     font-size: 13px;
     dominant-baseline: text-before-edge;
+  }
+
+  .btn-other {
+    margin-top: -50px;
   }
 
 </style>
