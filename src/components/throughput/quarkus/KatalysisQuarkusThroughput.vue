@@ -3,9 +3,9 @@
           vs-align="flex-start"
           vs-type="flex" vs-justify="center" vs-w="12">
     <vs-col vs-justify="center" vs-align="center" vs-w="11" vs-lg="11" vs-sm="12" vs-xs="12">
-      <h1>Petclinic</h1>
+      <h1>Quarkus</h1>
       <div style="width: 100% !important;">
-        <ChartModule :chart-data="petclinicThroughputChartData"/>
+        <ChartModule :chart-data="quarkusThroughputChartData"/>
       </div>
     </vs-col>
   </vs-row>
@@ -15,12 +15,12 @@
   import ChartModule from "../../ChartModule";
 
   export default {
-    name: "KatalysisPetclinicThroughput",
+    name: "KatalysisQuarkusThroughput",
     components: {ChartModule},
     data () {
       return {
-        petclinicThroughputChartData: {
-          id: "petclinic-throughput-summary-chart",
+        quarkusThroughputChartData: {
+          id: "quarkus-throughput-summary-chart",
           labels: ['runc', 'kata', 'kata-virtio-fs', 'kata-virtio-fs + xtune','vm'],
           title: 'Throughput (Higher the better)',
           type: 'bar',
@@ -37,17 +37,17 @@
             {
               name: "Throughput",
               type: "bar",
-              values: [890, 677, 714, 698, 542]
+              values: [18656, 3180, 3221, 3135, 7804]
             }
           ],
           showValues: true,
           valuesets: [
             {
-              'runc': 890,
-              'kata': 677,
-              'kata-virtio-fs' : 714,
-              'kata-virtio-fs + xtune' : 698,
-              'vm' : 542,
+              'runc': 18656,
+              'kata': 3180,
+              'kata-virtio-fs' : 3221,
+              'kata-virtio-fs + xtune' : 3135,
+              'vm' : 7804,
             }
           ],
           isRunc: true,

@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1>Response Time</h1>
+
     <vs-row
             vs-align="flex-start"
             vs-type="flex" vs-justify="center" vs-w="12">
@@ -36,7 +38,7 @@
   }
 
   .dataset-0 .data-point-value {
-    fill: #FFFFFF !important;
+    fill: #2c3e50 !important;
     font-size: 13px;
     dominant-baseline: text-before-edge;
   }
